@@ -5,38 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/64585f28ed.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Sociogram</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script
+    src="https://kit.fontawesome.com/64585f28ed.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="script.js"></script>
+  <title>MingleZone</title>
+  <script src="bootstrap.bundle.min.js"></script>
   </head>
-  <body onload="slideshow()">
-    <header id="intro-header" class="container-fluid">
-      <div class="container row">
-        <span id="header-logo" class="col-lg-3 col-md-3">
-          <img src="/images/logoimg.png" alt="logo" />
-          <span id="Mingle">MingleZone</span>
+  <body onload="slideshow();checkLogin()" id="index-body">
+    <header id="intro-header" class="container-fluid mb-4">
+      <div class="row container">
+        <span id="header-logo" class="col-lg-5 col-md-5">
+          <img src="/images/logoheader.png" alt="logo" style="width: 250px" />
         </span>
-        <ul class="mynav col-lg-6">
-          <li><a href="/">LINK1</a></li>
-          <li><a href="#">LINK2</a></li>
-          <li><a href="#">LINK3</a></li>
-          <li><a href="#">LINK4</a></li>
+        <ul class="mynav col-lg-3 col-md-3">
+          <li style="margin-left: 1em"><a href="/">HOME</a></li>
+          <li><a href="/feed.html">FEED</a></li>
         </ul>
-        <ul id="var-loginnav" class="offset-1 mynav col-lg-2 col-md-2">
+        <ul id="varLoginnav" class="offset-1 mynav col-lg-3 col-md-3">
           <li><a href="/registration.html">REGISTER</a></li>
           <li><a href="/login.html">LOGIN</a></li>
         </ul>
+        <ul id="varProfilenav" class="offset-1 col-lg-3 col-md-3">
+          <li>
+            <div class="dropdown">
+              <button
+                class="btn btn-light header-avatar"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="images/avatarUser.webp"
+                  class="rounded-circle"
+                  alt="Avatar"
+                  style="width: 50px"
+                />
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/myProfile.html">PROFILE</a></li>
+                <li><a class="dropdown-item" onclick="logout()">LOGOUT</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
-      <section id="intro" class="container-fluid">
+      <div id="intro" class="container-fluid">
         <div class="container">
           <div class="row">
-            <span class="col-lg-6 col-md-6">
-              <p class="title">Hi , we're MingleZone</p>
+            <span class="col-lg-7 col-md-7 col-sm-12" id="intro-box">
+              <p class="title">Hi, we're MingleZone</p>
               <h3 class="subtitle">
                 Your new favorite Social media and your second home.
               </h3>
@@ -48,21 +78,21 @@
                 </p>
 
                 <div id="intro-buttons">
-                  <button>Join us</button>
-                  <button>Login</button>
+                  <button class="big-button" onclick="gotoregister()">Join us</button>
+                  <button class="big-button" onclick="gotologin()">Login</button>
                 </div>
               </div>
             </span>
-            <span class="col-lg-6 col-md-6">
-              <img src="images/placeholder.webp" alt="placeholder" />
+            <span class="col-lg-5 col-md-5 col-sm-12">
+              <img src="images/intropic.jpg" style="width: 100%;" alt="placeholder" />
             </span>
           </div>
         </div>
-      </section>
+      </div>
     </header>
-    <section class="container mt-4">
-      <h1 class="text-center">How MingleZone works</h1>
-      <div class="row" id="services">
+    <section class="container main ">
+      <h1 class="text-center ahbat">How MingleZone works</h1>
+      <div class="row services">
         <div class="col-lg-4 col-md-4 service">
           <td><i class="fa-solid fa-pencil"></i></td>
 
@@ -79,6 +109,76 @@
       </div>
     </section>
     <!-- this should contain description to services -->
-    <section></section>
+    <div id="desc-services">
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="images/avatars.jpg" alt="avatars" style="width: 100%" />
+          </div>
+          <div class="col-lg-6">
+            <h3>Be a part of this growing community</h3>
+            <p class="service-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quas impedit temporibus dignissimos maxime adipisci iusto officiis labore expedita, corrupti fugiat sit asperiores ratione quia facilis nesciunt, aperiam reiciendis sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, tenetur molestias iure nobis odio, quae delectus amet at rem libero possimus eos quis animi quidem suscipit magnam a in autem.</p>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="row">
+          
+          <div class="col-lg-6 col-md-6">
+            <img src="images/temp_posts.jfif" alt="" style="width: 100%" />
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <h3>Browse a big selection of posts</h3>
+            <p class="service-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quas impedit temporibus dignissimos maxime adipisci iusto officiis labore expedita, corrupti fugiat sit asperiores ratione quia facilis nesciunt, aperiam reiciendis sint!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, tenetur molestias iure nobis odio, quae delectus amet at rem libero possimus eos quis animi quidem suscipit magnam a in autem.</p>
+
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="images/share.png" alt="" style="width: 100%" />
+          </div>
+          <div class="col-lg-6">
+            <h3>Share your own ideas with the world</h3>
+            <p class="service-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quas impedit temporibus dignissimos maxime adipisci iusto officiis labore expedita, corrupti fugiat sit asperiores ratione quia facilis nesciunt, aperiam reiciendis sint!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, tenetur molestias iure nobis odio, quae delectus amet at rem libero possimus eos quis animi quidem suscipit magnam a in autem.</p>
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="stats">
+      <section class="container">
+        <h1 class="text-center">The Mingly Community</h1>
+        <div class="row services">
+          <div class="col-lg-4 col-md-4 stat">
+            <h1>380</h1>
+  
+            <p class="text-center">Membres</p>
+          </div>
+          <div class="col-lg-4 col-md-4 stat">
+            <h1>6500</h1>
+  
+            <p class="text-center">Posts</p>
+          </div>
+          <div class="col-lg-4 col-md-4 stat">
+            <h1>80000</h1>
+  
+            <p class="text-center">Upvotes</p>
+          </div>
+        </div>
+    </div>
+    <footer>
+      <div>
+        <hr />
+        <ul class="d-flex">
+          <li><a href="/"> HOME</a></li>
+          <li><a href="/feed.html"> FEED</a></li>
+          <li><a href="/login.html"> LOGIN</a></li>
+          <li><a href="/registration.html"> REGISTER</a></li>
+          <li><a href="/myProfile.html"> PROFILE</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

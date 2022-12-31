@@ -7,22 +7,43 @@ body {
 }
 
 /* typography */
+.service-p {
+  font-size: 21px;
+  margin-top: 2em;
+}
+.err-sm {
+  color: red;
+}
+.btn-reactions span {
+  text-align: left;
+  width: 700px;
+}
+.username {
+  margin: 1em 0.5em;
+}
+.date-post {
+  font-size: 11px;
+  margin-bottom: 0px !important;
+}
+.upnbr {
+  font-size: 20px;
+}
 .title {
   font-size: 60px;
   font-weight: 700;
   color: #ff6122;
 }
 p {
-  color: #6f6f6f;
+  color: #313030;
 }
 
 #login-container form p a {
   text-decoration: none;
 }
 
-ul li a {
+header ul li a {
   text-decoration: none;
-  padding: 25px 50px;
+  padding: 1em 2em;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -49,11 +70,6 @@ ul li a {
   margin: 10px auto;
 }
 
-#intro-p {
-  font-size: 25px;
-  margin-top: 20px;
-}
-
 h1,
 h2,
 h3,
@@ -61,15 +77,19 @@ h4,
 h5,
 h6 {
   font-family: "Karla", sans-serif;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
-ul li a:hover {
+header ul li a:hover {
   background-color: #ff6122;
   color: #2b394a;
 }
 
 /* imgs */
+
+.btn-reactions i {
+  margin-top: 0.5em;
+}
 
 #login-container form img {
   width: 55px;
@@ -77,7 +97,7 @@ ul li a:hover {
 }
 
 #header-logo {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 #logo-intro {
   width: 100%;
@@ -95,7 +115,31 @@ ul li a:hover {
 }
 
 /* containers */
-#services {
+
+#intro-box {
+  background-color: white;
+  padding: 2em;
+  border-radius: 2px;
+}
+.card-header img {
+  width: 60px;
+  height: 60px;
+  margin: 0.5em;
+}
+.card-header {
+  padding: 0px !important;
+}
+.post {
+  display: flex;
+}
+.react {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.post-body {
+  width: 100%;
+}
+.services {
   margin-top: 45px;
   display: flex;
   justify-content: space-between;
@@ -105,11 +149,13 @@ ul li a:hover {
   margin-top: 20px;
   font-size: 25px;
 }
+.stat p {
+  margin-top: 20px;
+  font-size: 37px;
+}
 header {
-  min-height: 170px;
+  min-height: 60px;
   margin: 0px !important;
-  padding-left: 0px !important;
-  margin-left: -15px !important;
 }
 #floatingTextarea {
   font-size: 25px;
@@ -120,6 +166,9 @@ header {
   padding-top: 5%;
   background-color: #fafafa;
   transition: 0.5s;
+  margin-top: 10px !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .post-form h3 {
   margin-top: 30px;
@@ -128,7 +177,8 @@ header {
   margin-left: auto !important;
   margin-right: auto !important;
 }
-i {
+i,
+.stat h1 {
   text-align: center;
   width: 100%;
   font-size: 50px;
@@ -138,7 +188,7 @@ i {
   margin-right: auto !important;
 }
 
-ul li {
+.mynav li {
   list-style: none;
   margin-top: 25px;
 }
@@ -150,7 +200,6 @@ ul li {
 }
 
 #login-container {
-  margin-top: 5%;
   height: 713px;
   padding-left: 0%;
   text-align: center;
@@ -174,7 +223,41 @@ ul li {
 }
 
 /* buttons */
-button {
+.chev-toggled {
+  color: #ff6122;
+}
+.chevrons {
+  border-width: 0px;
+}
+.chevrons:hover {
+  border-width: 0px;
+}
+.header-avatar {
+  border-width: 0px !important;
+  padding: 0px;
+  float: right;
+}
+#varProfilenav {
+  margin-top: 11px;
+  list-style: none;
+}
+#varProfilenav li a {
+  font-weight: 700;
+}
+
+.btn-reactions:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.btn-reactions {
+  border-radius: 5px;
+  padding: 8px;
+  height: 100%;
+  display: flex;
+  width: 10em;
+  transition-duration: 0.5s;
+}
+.big-button {
   background-color: #ff6122 !important;
   color: #fafafa !important;
   float: right;
@@ -223,12 +306,55 @@ button:hover {
   width: 60%;
 }
 
-.name {
-  display: flex;
-  justify-content: space-around;
-}
-
 .register-input {
   width: 100%;
   margin: 0px;
+}
+
+#index-body section {
+  margin-top: 90px !important;
+}
+#desc-services {
+  margin-top: 110px !important;
+}
+#intro-p {
+  font-size: 25px;
+  margin-top: 20px;
+}
+@media (max-width: 1200px) {
+  .ahbat {
+    margin-top: 200px;
+  }
+}
+@media (max-width: 995px) {
+  .ahbat {
+    margin-top: 230px;
+  }
+}
+@media (max-width: 766px) {
+  .ahbat {
+    margin-top: 800px;
+  }
+}
+
+footer ul {
+  justify-content: space-around;
+  list-style: none;
+}
+footer {
+  height: 80px;
+  margin-top: 5em;
+}
+footer ul li {
+  margin-top: 1em;
+}
+
+footer ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2b394a;
+}
+footer ul li a:hover {
+  color: #2b394a;
 }

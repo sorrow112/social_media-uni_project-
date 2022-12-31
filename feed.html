@@ -4,7 +4,290 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/64585f28ed.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+    <title>Feed</title>
+    <script src="bootstrap.bundle.min.js"></script>
   </head>
-  <body></body>
+  <body onload="checkLogin()">
+    <header id="intro-header" class="container-fluid mb-4">
+      <div class="row container">
+        <span id="header-logo" class="col-lg-5 col-md-5">
+          <img src="/images/logoheader.png" alt="logo" style="width: 250px" />
+        </span>
+        <ul class="mynav col-lg-3 col-md-3">
+          <li style="margin-left: 1em"><a href="/">HOME</a></li>
+          <li><a href="/feed.html">FEED</a></li>
+        </ul>
+        <ul id="varLoginnav" class="offset-1 mynav col-lg-3 col-md-3">
+          <li><a href="/registration.html">REGISTER</a></li>
+          <li><a href="/login.html">LOGIN</a></li>
+        </ul>
+        <ul id="varProfilenav" class="offset-1 col-lg-3 col-md-3">
+          <li>
+            <div class="dropdown">
+              <button
+                class="btn btn-light header-avatar"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="images/avatarUser.webp"
+                  class="rounded-circle"
+                  alt="Avatar"
+                  style="width: 50px"
+                />
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/myProfile.html">PROFILE</a>
+                </li>
+                <li><a class="dropdown-item" onclick="logout()">LOGOUT</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="container main">
+      <section class="container-fluid">
+        <div class="card mt-4">
+          <div class="card-header">
+            <h2 class="m-4">Create your own post!</h2>
+          </div>
+          <div class="card-body">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Click here to write a post"
+              onclick="gopostform()"
+            />
+          </div>
+        </div>
+        <!-- post 1  -->
+        <div class="card mt-4">
+          <article class="post">
+            <div class="react">
+              <button class="chevrons">
+                <i
+                  class="fa-solid fa-chevron-up fa-xl"
+                  id="post1up"
+                  onclick="upPostOne()"
+                ></i>
+              </button>
+              <div class="text-center upnbr" id="post1">59</div>
+              <button class="chevrons">
+                <i
+                  class="fa-solid fa-chevron-down fa-xl"
+                  id="post1down"
+                  onclick="downPostOne()"
+                ></i>
+              </button>
+            </div>
+            <div class="post-body">
+              <div class="card-header d-flex">
+                <img
+                  src="images/avatar.jpg"
+                  class="rounded-circle"
+                  alt="Avatar"
+                />
+                <div class="username">
+                  <a
+                    href="/profile1.html"
+                    style="text-decoration: none; color: #2b394a"
+                    ><h5>Ahmed Souleimen Jguirim</h5></a
+                  >
+                  <p class="date-post">12:11 on Wednesday, December 28, 2022</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Today was a great day</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus alias officia inventore hic fugiat eos cumque,
+                  pariatur saepe, reprehenderit ab esse corrupti quam error
+                  sint. Soluta alias aliquid minima officiis!
+                </p>
+              </div>
+              <div class="card-footer d-flex">
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-message fa-xl"></i>
+                  <span style="margin-left: 0.5em">211 comments</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions ml-4"
+                  style="width: 5em !important"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-share-from-square fa-xl"></i>
+                  <span style="margin-left: 0.5em">share</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- post 2  -->
+        <div class="card mt-4">
+          <article class="post">
+            <div class="react">
+              <button class="chevrons">
+                <i
+                  class="fa-solid fa-chevron-up fa-xl"
+                  onclick="upPostTwo()"
+                  id="post2up"
+                ></i>
+              </button>
+              <div class="text-center upnbr" id="post2">831</div>
+              <button class="chevrons">
+                <i
+                  class="fa-solid fa-chevron-down fa-xl"
+                  onclick="downPostTwo()"
+                  id="post2down"
+                ></i>
+              </button>
+            </div>
+            <div class="post-body">
+              <div class="card-header d-flex">
+                <img
+                  src="images/avatar3.jpg"
+                  class="rounded-circle"
+                  alt="Avatar"
+                />
+                <div class="username">
+                  <a
+                    href="/profile3.html"
+                    style="text-decoration: none; color: #2b394a"
+                    ><h5>Sarah Doe</h5></a
+                  >
+                  <p class="date-post">13:00 on Sunday, December 25, 2022</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">I got hired at Google</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus alias officia inventore hic fugiat eos cumque,
+                  pariatur saepe, reprehenderit ab esse corrupti quam error
+                  sint. Soluta alias aliquid minima officiis!
+                </p>
+              </div>
+              <div class="card-footer d-flex">
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-message fa-xl"></i>
+                  <span style="margin-left: 0.5em">1,300 comments</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions ml-4"
+                  style="width: 5em !important"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-share-from-square fa-xl"></i>
+                  <span style="margin-left: 0.3em">share</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- post 3 -->
+        <div class="card mt-4">
+          <article class="post">
+            <div class="react">
+              <button class="chevrons" onclick="upPostThree()">
+                <i class="fa-solid fa-chevron-up fa-xl" id="post3up"></i>
+              </button>
+              <div class="text-center upnbr" id="post3">230</div>
+              <button class="chevrons" onclick="downPostThree()">
+                <i class="fa-solid fa-chevron-down fa-xl" id="post3down"></i>
+              </button>
+            </div>
+            <div class="post-body">
+              <div class="card-header d-flex">
+                <img
+                  src="images/avatar2.jpg"
+                  class="rounded-circle"
+                  alt="Avatar"
+                />
+                <div class="username">
+                  <a
+                    href="/profile2.html"
+                    style="text-decoration: none; color: #2b394a"
+                  >
+                    <h5>Bob Smith</h5></a
+                  >
+                  <p class="date-post">18:11 on Wednesday, December 21, 2022</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">I love my job!</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus alias officia inventore hic fugiat eos cumque,
+                  pariatur saepe, reprehenderit ab esse corrupti quam error
+                  sint. Soluta alias aliquid minima officiis!
+                </p>
+              </div>
+              <div class="card-footer d-flex">
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-message fa-xl"></i>
+                  <span style="margin-left: 0.5em">318 comments</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-reactions ml-4"
+                  style="width: 5em !important"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fa-regular fa-share-from-square fa-xl"></i>
+                  <span style="margin-left: 0.3em">share</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div>
+        <hr />
+        <ul class="d-flex">
+          <li><a href="/"> HOME</a></li>
+          <li><a href="/feed.html"> FEED</a></li>
+          <li><a href="/login.html"> LOGIN</a></li>
+          <li><a href="/registration.html"> REGISTER</a></li>
+          <li><a href="/myProfile.html"> PROFILE</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
